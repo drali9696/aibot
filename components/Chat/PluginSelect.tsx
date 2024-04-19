@@ -19,6 +19,7 @@ export const PluginSelect: FC<Props> = ({ plugin, onPluginChange }) => {
   }, []);
 
   return (
+    <div style={{ display: 'none' }}>
     <div className="flex flex-col">
       <div className="w-full rounded-lg border border-neutral-200 bg-transparent pr-2 text-neutral-900 dark:border-neutral-600 dark:text-white">
         <select
@@ -53,6 +54,7 @@ export const PluginSelect: FC<Props> = ({ plugin, onPluginChange }) => {
           ))}
         </select>
       </div>
+    </div>
     </div>
   );
 };
