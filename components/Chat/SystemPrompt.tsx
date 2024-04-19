@@ -189,6 +189,7 @@ export const SystemPrompt: FC<Props> = ({
   }, []);
 
   return (
+    <div style={{ display: 'none' }}>
     <div className="flex flex-col">
       <label className="mb-2 text-left text-neutral-700 dark:text-neutral-400">
         {t('System Prompt')}
@@ -235,6 +236,7 @@ export const SystemPrompt: FC<Props> = ({
           onClose={() => setIsModalVisible(false)}
         />
       )}
+    </div>
     </div>
   );
 };
