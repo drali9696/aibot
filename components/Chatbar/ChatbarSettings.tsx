@@ -45,13 +45,14 @@ export const ChatbarSettings: FC<Props> = ({
       ) : null}
 
       <Import onImport={onImportConversations} />
-
+      <div style={{ display: 'none' }}>
       <SidebarButton
         text={t('Export data')}
         icon={<IconFileExport size={18} />}
         onClick={() => onExportConversations()}
       />
-
+</div>
+<div style={{ display: 'none' }}>
       <SidebarButton
         text={lightMode === 'light' ? t('Dark mode') : t('Light mode')}
         icon={
@@ -61,14 +62,16 @@ export const ChatbarSettings: FC<Props> = ({
           onToggleLightMode(lightMode === 'light' ? 'dark' : 'light')
         }
       />
+      </div>
 
       <Key apiKey={apiKey} onApiKeyChange={onApiKeyChange} />
-
+      <div style={{ display: 'none' }}>
       <PluginKeys
         pluginKeys={pluginKeys}
         onPluginKeyChange={onPluginKeyChange}
         onClearPluginKey={onClearPluginKey}
       />
+      </div>
     </div>
   );
 };
