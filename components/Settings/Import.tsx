@@ -30,7 +30,7 @@ export const Import: FC<Props> = ({ onImport }) => {
           reader.readAsText(file);
         }}
       />
-
+<div style={{ display: 'none' }}>
       <SidebarButton
         text={t('Import data')}
         icon={<IconFileImport size={18} />}
@@ -43,6 +43,7 @@ export const Import: FC<Props> = ({ onImport }) => {
           }
         }}
       />
+      </div>
     </>
   );
 };
