@@ -9,10 +9,11 @@ import { CodeBlock } from '../Markdown/CodeBlock';
 import { MemoizedReactMarkdown } from '../Markdown/MemoizedReactMarkdown';
 
 // Utility function to determine text direction
-const determineTextDirection = (text) => {
+const determineTextDirection = (text: string) => {
   const persianPattern = /[\u0600-\u06FF\uFB8A\uFDF2\uFDFD\uFE70-\uFEFF]/;
   return persianPattern.test(text) ? 'rtl' : 'ltr';
 };
+
 
 interface Props {
   message: Message;
