@@ -8,12 +8,10 @@ import remarkMath from 'remark-math';
 import { CodeBlock } from '../Markdown/CodeBlock';
 import { MemoizedReactMarkdown } from '../Markdown/MemoizedReactMarkdown';
 
-// Utility function to determine text direction
 const determineTextDirection = (text: string) => {
   const persianPattern = /[\u0600-\u06FF\uFB8A\uFDF2\uFDFD\uFE70-\uFEFF]/;
   return persianPattern.test(text) ? 'rtl' : 'ltr';
 };
-
 
 interface Props {
   message: Message;
@@ -92,6 +90,9 @@ export const ChatMessage: FC<Props> = memo(
           </div>
 
           <div className="prose mt-[-2px] w-full dark:prose-invert" dir={determineTextDirection(messageContent)}>
+            {message.role === 'assistant' && (
+              <p>gggggggggggolby</p>
+            )}
             {message.role === 'user' && isEditing ? (
               <textarea
                 ref={textareaRef}
@@ -160,6 +161,13 @@ export const ChatMessage: FC<Props> = memo(
             )}
           </div>
         </div>
+        {message.role === 'assistant' && (
+          <div className="flex justify-center mt-4">
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+              برای خرید محصولات به اینجا وارد شوید
+            </a>
+          </div>
+        )}
       </div>
     );
   },
