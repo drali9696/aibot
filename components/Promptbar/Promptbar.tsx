@@ -96,6 +96,7 @@ export const Promptbar: FC<Props> = ({
     <div
       className={`fixed top-0 right-0 z-50 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[14px] transition-all sm:relative sm:top-0`}
     >
+      <div style={{ display: 'none' }}>
       <div className="flex items-center">
         <button
           className="text-sidebar flex w-[190px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border border-white/20 p-3 text-white transition-colors duration-200 hover:bg-gray-500/10"
@@ -115,7 +116,7 @@ export const Promptbar: FC<Props> = ({
           <IconFolderPlus size={16} />
         </button>
       </div>
-
+      </div>
       {prompts.length > 1 && (
         <Search
           placeholder={t('Search prompts...') || ''}
@@ -156,10 +157,12 @@ export const Promptbar: FC<Props> = ({
           </div>
         ) : (
           <div className="mt-8 text-center text-white opacity-50 select-none">
+            <div style={{ display: 'none' }}>
             <IconMistOff className="mx-auto mb-3" />
             <span className="text-[14px] leading-normal">
               {t('No prompts.')}
             </span>
+            </div>
           </div>
         )}
       </div>
